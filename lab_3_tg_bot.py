@@ -44,5 +44,6 @@ async def chatgpt_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 app = ApplicationBuilder().token(tg_bot_access_token).build()
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chatgpt_reply))
-# while True:
-app.run_polling()
+
+if __name__ == '__main__':
+    app.run_polling()
