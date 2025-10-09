@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Create record</title>
+
+</head>
+<body>
+
+{% block content %}
+    <div class="post">
+        <h1>Create record</h1>
+        <form method="post" action="/create_user">
+            <label for="username">User name
+                <input name="username" type="text"/>
+            </label>
+            <label for="occupation">User Occupation
+                <input name="occupation" type="text"/>
+            </label>
+            <label for="create">Create Record
+                <button name="create" type="submit">Create</button>
+            </label>
+
+        </form>
+    </div>
+{% endblock %}
+</body>

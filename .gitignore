@@ -127,3 +127,7 @@ tags
 
 # End of https://www.gitignore.io/api/macos,vim,intellij,scala,sbt,git
 .env
+/lab_4_CRUD/test_db.sqlite
+/lab_6_fastApi/companies.db
+/lab_4_CRUD/info.json
+/lab_5_GraphQL/test_db.sqlite

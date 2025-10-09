@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+<title>Edit record</title>
+
+<body>
+{% block content %}
+    <div class="post">
+        <h1>Update record</h1>
+        <form method="post" action="/update_user/{{ user[0] }}">
+            <label for="occupation">User Occupation
+                <input name="occupation" type="text"/>
+            </label>
+            <label for="edit">Update Record
+                <button name="edit" type="submit">Update</button>
+            </label>
+
+        </form>
+    </div>
+{% endblock %}
+</body>

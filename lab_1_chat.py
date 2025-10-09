@@ -84,8 +84,7 @@ class Server:
                 if not message:
                     break
 
-                # Store message and broadcast to all clients
-                # formatted_message = f'{self.clients[conn]}: {message}'
+                # Storing message and broadcast to all clients
                 formatted_message = message
                 self.message_history.append(formatted_message + '\n')
                 self.log(formatted_message)
@@ -185,7 +184,7 @@ class ChatClient:
 
 server_root = tk.Tk()
 server = Server(server_root)
-sleep(0.2)
+sleep(0.2)  # thread_safe
 client_num = int(input('Enter number of clients: '))
 for i in range(1, client_num + 1):
     client_root = tk.Toplevel(server_root)

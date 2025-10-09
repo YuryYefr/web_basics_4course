@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% block title %}<title>CRUD App</title> {% endblock title %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+<button><a href="{{ url_for('home') }}">HOME</a></button>
+{% block content %}
+    <div class="home-bar">
+
+
+        <div class="card">
+            <div class="card-header d-flex">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+
+                <!-- Left Section -->
+                <div class="p-3 border-end">
+                    <h3 class="my-0">Welcome to the CRUD application.</h3>
+                </div>
+                <div class="p-3 border-end">
+                    <h3 class="my-0">To get started, choose a CRUD operation</h3>
+                </div>
+
+
+                <!-- Right Section -->
+                <div class="card-body" style="justify-content: center">
+                    <button><a href="{{ url_for('create_user_form') }}">CREATE USER</a></button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container" style="justify-content: center">
+        <h1>
+            CRUD Application
+        </h1>
+
+        <text>
+            {% for user in users %}
+                <ul>
+                    <li><a href="{{ url_for('get_request', user_id=user['id']) }}">user id is {{ user['id'] }},
+                        username is {{ user['username'] }} ,
+                        user occupation
+                        is {{ user['occupation'] }}</a></li>
+                </ul>
+                <br>
+            {% endfor %}
+        </text>
+    </div>
+
+{% endblock content %}
+
+</body>
+</html>

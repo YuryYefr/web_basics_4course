@@ -1,0 +1,37 @@
+text {
+    font-size: 12px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+body {
+    background-color: lightblue;
+}
+
+a {
+    text-decoration: none;
+    color: black !important;
+}
+
+.home-bar {
+    background-color: darkred;
+    right: auto;
+}
+
+.card {
+    background-color: blue;
+    justify-content: center;
+    display: grid;
+}
+
+.card-body {
+    background-color: yellowgreen;
+    justify-items: center;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
