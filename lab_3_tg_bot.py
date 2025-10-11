@@ -103,11 +103,15 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.edit_message_text(text=response, reply_markup=reply_markup)
 
 
-# --- Build and run the bot ---
-app = ApplicationBuilder().token(tg_bot_access_token).build()
-app.add_handler(CommandHandler("start", start))
-app.add_handler(CallbackQueryHandler(button))
-app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chatgpt_reply))
+def main():
+    app = ApplicationBuilder().token(tg_bot_access_token).build()
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CallbackQueryHandler(button))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chatgpt_reply))
+
+
+    print("Bot is running via polling...")
+    app.run_polling()  # Keeps running forever
 
 if __name__ == '__main__':
-    app.run_polling()
+    main()
